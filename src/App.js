@@ -9,19 +9,11 @@ function App() {
 
   const [test, setTest] = useState('')
   const [data, setData] = useState([])
+  const [submit, setSubmit] = useState(false)
+  const [score, setScore] = useState(0)
+
 
   // set test type data
-  // switch (test) {
-  //   case 'programming': setData(programming)
-  //     break;
-  //   case 'politics': setData(politics)
-  //     break;
-  //   case 'sports': setData(sports)
-  //     break;
-  //   default: setData('')
-  //     break;
-  // }
-
   const handleTestData = (test) => {
     if (test === 'programming') {
       setData(programming)
@@ -32,7 +24,7 @@ function App() {
     }
   }
 
-  // console.log(data)
+  console.log(data)
 
   useEffect(() => {
     handleTestData(test)
@@ -44,8 +36,8 @@ function App() {
       {/*<h1>Quizio</h1> */}
       <Navbar />
       <div className="app-content">
-        <Test setTest={setTest} />
-        <QuizData test={test} data={data} />
+        <Test setTest={setTest} setSubmit={setSubmit} setScore={setScore} />
+        {<QuizData test={test} data={data} setSubmit={setSubmit} submit={submit} setScore={setScore} score={score} />}
       </div>
     </div>
   );
