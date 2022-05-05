@@ -1,0 +1,29 @@
+.Test {
+    border: 1px solid purple;
+    flex: 0.3;
+}
+
+h2 {
+    text-align: center;
+    padding: 1rem;
+}
+
+.container {
+    width: 80%;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.test-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.test-options button {
+    width: 8rem;
+    background-color: blueviolet;
+    margin: 1rem;
+}
