@@ -15,15 +15,42 @@ h2 {
     text-align: center;
 }
 
+.test-type {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+}
+
 .test-options {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex: 0.5;
 }
+
 
 .test-options button {
     width: 8rem;
     background-color: blueviolet;
     margin: 1rem;
+}
+
+
+.new-test {
+    display: flex;
+    flex-direction: column;
+    flex: 0.5;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    margin: 1rem;
+}
+
+.new-test button {
+    width: 5rem;
+    text-align: center;
+    background-color: green;
 }

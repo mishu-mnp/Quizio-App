@@ -3,7 +3,12 @@ import './App.css';
 import Navbar from './components/Navbar';
 import QuizData from './components/QuizData';
 import Test from './components/Test';
-import { programming, politics, sports } from './data'
+import { programming, politics, sports } from './data';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 function App() {
 
@@ -32,15 +37,28 @@ function App() {
 
   // console.log(test)
   return (
-    <div className="App">
-      {/*<h1>Quizio</h1> */}
+    <Router>
       <Navbar />
-      <div className="app-content">
-        <Test setTest={setTest} setSubmit={setSubmit} setScore={setScore} />
-        {<QuizData test={test} data={data} setSubmit={setSubmit} submit={submit} setScore={setScore} score={score} />}
+      <div className="App">
+        <Routes>
+          <Route path='/'
+            element={<>
+              <Test setTest={setTest} setSubmit={setSubmit} setScore={setScore} />
+            </>}>
+          </Route>
+          <Route path='/test'
+            element={<>
+              <div className="app-content">
+                <Test setTest={setTest} setSubmit={setSubmit} setScore={setScore} />
+                <QuizData test={test} data={data} setSubmit={setSubmit} submit={submit} setScore={setScore} score={score} />
+              </div>
+            </>}>
+          </Route>
+        </Routes>
       </div>
-    </div>
-  );
+    </Router>
+  )
 }
+
 
 export default App;

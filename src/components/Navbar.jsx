@@ -1,11 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">Home</a>
-        <a className="navbar-brand" href="/about">About</a>
+        <Link className="navbar-brand" to="/">Home</Link>
+        <Link className="navbar-brand" to="/test">Test</Link>
+        <Link className="navbar-brand" to="/about">About</Link>
 
 
         <div className="auth-content">
